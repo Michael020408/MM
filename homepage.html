@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MoodMap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="navbarscript.js" defer></script>
+
+</head>
+<body>
+  <!-- HTML: two headers, one for “desktop,” one for “mobile” -->
+<nav class="navbar navbar-desktop">
+  <!-- full desktop nav -->
+  <a href="homepage.html" class="logo">
+    <img src="assets/logo.png" alt="MoodMap logo" class="nav-logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="homepage.html">Home</a></li>
+    <li><a href="moods.html">Moods</a></li>
+    <li><a href="toolpage.html">Combiner</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+</nav>
+
+<nav class="navbar navbar-mobile">
+    <a href="homepage.html" class="logo">
+    <img src="assets/logo.png" alt="MoodMap logo" class="nav-logo">
+    </a>   <!-- Hamburger button for mobile -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="moods.html">Moods</a></li>
+      <li><a href="toolpage.html" class="active">Combiner</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Navigate Your Emotions<br />with Clarity</h1>
+      <p class="lead">MoodMap helps you explore what you’re feeling, why you’re feeling it, and what it means for you.</p>
+      <div class="cta-group">
+        <a href="toolpage.html" class="btn-primary">Explore Now</a>
+        <a href="moods.html" class="btn-outline"
+          onclick="document
+           .querySelector('#about')
+           .scrollIntoView({ behavior:'smooth' });">
+          How It Works
+        </a>
+      </div>
+    </div>
+    <!-- Replace with your actual ship illustration asset -->
+    <img src="assets/boat-hero.png" alt="Ship illustration" class="hero-image" />
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us.</h2>
+    <p>MoodMap helps you explore what you’re feeling, why you’re feeling it, and what it means for you.</p>
+    <ul class="features">
+      <li>Mix emotions with our Emotion Combiner</li>
+      <li>Learn how different feelings interact</li>
+      <li>Use insights for journaling or therapy</li>
+    </ul>
+    <a href="toolpage.html" class="btn-secondary">Explore Now</a>
+  </section>
+
+  <section class="mission">
+    <h2>Our Mission</h2>
+    <p>Too often, emotions feel like a storm—loud, tangled, and hard to name. MoodMap exists to chart that storm. We’re not therapists, but we believe emotional literacy should be accessible to everyone.</p>
+  </section>
+<script>
+  // Disable scroll-restoration (so back/forward won’t jump)
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  // Always start at top on load
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    // optional: strip the hash so future reloads are clean
+    history.replaceState(null, '', window.location.pathname);
+  });
+</script>
+</body>
+</html>

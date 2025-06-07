@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MoodMap – Emotion Combiner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="navbarscript.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- HTML: two headers, one for “desktop,” one for “mobile” -->
+<nav class="navbar navbar–desktop">
+  <!-- full desktop nav -->
+  <a href="homepage.html" class="logo">
+    <img src="assets/logo.png" alt="MoodMap logo" class="nav-logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="homepage.html">Home</a></li>
+    <li><a href="moods.html">Moods</a></li>
+    <li><a href="toolpage.html">Combiner</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+</nav>
+
+<nav class="navbar navbar-mobile">
+    <a href="homepage.html" class="logo">
+    <img src="assets/logo.png" alt="MoodMap logo" class="nav-logo">
+    </a>   <!-- Hamburger button for mobile -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="moods.html">Moods</a></li>
+      <li><a href="toolpage.html" class="active">Combiner</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="tool-hero">
+    <h1>Emotion Combiner</h1>
+    <p>Blend up to three base emotions to discover their combined effect.</p>
+  </section>
+
+  <!-- Combiner Form + Result -->
+  <section class="tool-content">
+    <div class="form-card">
+      <form id="emotion-combiner-form" onsubmit="event.preventDefault(); combineEmotions();">
+
+        <div class="form-group">
+          <label for="emotion1">Emotion 1</label>
+          <select id="emotion1" name="emotion1" required>
+            <option value="">-- select --</option>
+            <option value="joy">Joy</option>
+            <option value="trust">Trust</option>
+            <option value="fear">Fear</option>
+            <option value="sadness">Sadness</option>
+            <option value="disgust">Disgust</option>
+            <option value="anger">Anger</option>
+            <option value="surprise">Surprise</option>
+            <option value="anticipation">Anticipation</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="emotion2">Emotion 2</label>
+          <select id="emotion2" name="emotion2" required>
+            <option value="">-- select --</option>
+            <option value="joy">Joy</option>
+            <option value="trust">Trust</option>
+            <option value="fear">Fear</option>
+            <option value="sadness">Sadness</option>
+            <option value="disgust">Disgust</option>
+            <option value="anger">Anger</option>
+            <option value="surprise">Surprise</option>
+            <option value="anticipation">Anticipation</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="emotion3">Emotion 3 (optional)</label>
+          <select id="emotion3" name="emotion3">
+            <option value="">-- select --</option>
+            <option value="joy">Joy</option>
+            <option value="trust">Trust</option>
+            <option value="fear">Fear</option>
+            <option value="sadness">Sadness</option>
+            <option value="disgust">Disgust</option>
+            <option value="anger">Anger</option>
+            <option value="surprise">Surprise</option>
+            <option value="anticipation">Anticipation</option>
+          </select>
+        </div>
+
+        <div class="button-group">
+          <button type="submit" class="btn-primary">Combine</button>
+          <button type="button" class="btn-outline" onclick="resetForm()">Reset</button>
+        </div>
+
+      </form>
+
+      <div id="resultBox" class="result-card" style="display:none;">
+        <h2>Resulting Emotion</h2>
+        <p><strong>Name:</strong> <span id="emotionName"></span></p>
+        <p><strong>Purpose:</strong> <span id="emotionPurpose"></span></p>
+        <p><strong>Urge:</strong> <span id="emotionUrge"></span></p>
+        <p><strong>Opposite:</strong> <span id="emotionOpposite"></span></p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

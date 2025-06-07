@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MoodMap – FAQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="navbarscript.js" defer></script>
+  <script src="faq-accordion.js" defer></script>
+</head>
+<body>
+    <!-- HTML: two headers, one for “desktop,” one for “mobile” -->
+<nav class="navbar navbar–desktop">
+  <!-- full desktop nav -->
+  <a href="homepage.html" class="logo">
+    <img src="assets/logo.png" alt="MoodMap logo" class="nav-logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="homepage.html">Home</a></li>
+    <li><a href="moods.html">Moods</a></li>
+    <li><a href="toolpage.html">Combiner</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+</nav>
+
+<nav class="navbar navbar-mobile">
+    <a href="homepage.html" class="logo">
+    <img src="assets/logo.png" alt="MoodMap logo" class="nav-logo">
+    </a>   <!-- Hamburger button for mobile -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="moods.html">Moods</a></li>
+      <li><a href="toolpage.html" class="active">Combiner</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <section class="tool-hero">
+    <h1>Frequently Asked Questions</h1>
+    <p>Find answers to common questions about MoodMap, the Emotion Combiner, and more.</p>
+  </section>
+
+  <section class="tool-content">
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="question">
+          How does the Emotion Combiner work?
+          <span class="arrow">+</span>
+        </div>
+        <div class="answer">
+          <p>The Emotion Combiner blends two or three base emotions to generate a resulting emotion with its name, purpose, urge, and opposite. Simply select your emotions and click “Combine.”</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="question">
+          Can I select the same emotion twice?
+          <span class="arrow">+</span>
+        </div>
+        <div class="answer">
+          <p>No. Each emotion must be unique for a valid combination. The Combiner removes duplicates automatically.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="question">
+          What are base emotions?
+          <span class="arrow">+</span>
+        </div>
+        <div class="answer">
+          <p>Base emotions are the eight fundamental feelings: Joy, Trust, Fear, Sadness, Disgust, Anger, Surprise, and Anticipation.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="question">
+          How can I interpret the results?
+          <span class="arrow">+</span>
+        </div>
+        <div class="answer">
+          <p>Each resulting emotion includes its purpose (why you feel it), the urge (what it prompts you to do), and the opposite (a contrast to consider).</p>
+        </div>
+      </div>
+      <!-- add more .faq-item blocks as needed -->
+    </div>
+  </section>
+</body>
+</html>

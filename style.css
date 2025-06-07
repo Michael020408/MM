@@ -1,0 +1,622 @@
+/* Import Poppins and define Lucidity Condensed */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@font-face {
+  font-family: 'Lucidity Condensed';
+  src: url('assets/fonts/LucidityCondensed-Regular.woff2') format('woff2'),
+       url('assets/fonts/LucidityCondensed-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --primary: #6f3fff;
+  --secondary: #ffb169;
+  --white: #ffffff;
+  --font-sans: 'Poppins', sans-serif;
+  --font-logo: 'Lucidity Condensed', sans-serif;
+    /* a very soft lavender glow */
+  --glow-purple: #6f3fff3e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.nav-logo {
+  max-height: 2.5rem;    /* adjust to match your nav’s height */
+  width: auto;
+  display: block;        /* removes inline-image descender gap */
+}
+
+/* Optional: center it vertically if your nav uses flexbox */
+.navbar-desktop,
+.navbar-mobile {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #000;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 5%;
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(36, 20, 84, 0.4);      /*  translucent dark */
+  backdrop-filter: blur(10px);                       /* apply the glass blur */
+  -webkit-backdrop-filter: blur(10px);               /* for Safari */
+  border-bottom: 1px solid rgba(255,255,255,0.3);    /* subtle separation line */
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-size: 2rem;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+.nav-links li + li {
+  margin-left: 2rem;
+}
+.nav-links a {
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+/* On hover: turn orange */
+.nav-links a:hover {
+  color: var(--secondary);
+}
+
+/* at the bottom of style.css */
+.navbar.dark-text .logo,
+.navbar.dark-text .nav-links a {
+  color: #000 !important;    /* force black when .dark-text is present */
+}
+.navbar.dark-text .nav-links a:hover {
+  color: var(--secondary) !important;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 75vh;
+  padding: 5rem 5% 0;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+.hero {
+  /* keep your existing display:flex, padding, background… */
+  flex-direction: row-reverse; /* 1: swap sides */
+}
+
+/* 2a: if you want the heading centered but the boat stuck to the bottom: */
+.hero-text {
+  align-self: center;
+}
+.hero-image {
+  align-self: flex-end;
+}
+.hero .hero-text {
+  max-width: 600px;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.2;
+}
+.hero .lead {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  color: var(--white);
+}
+.features {
+  list-style: none;
+  margin: 1.5rem 0;
+}
+.features li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  color: var(--white);
+}
+.cta-group {
+  margin-top: 2rem;
+}
+.cta-group a {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.cta-group .btn-primary {
+  background: var(--white);
+  color: var(--primary);
+  margin-right: 1rem;
+}
+.cta-group .btn-primary:hover {
+  transform: translateY(-3px);
+}
+.cta-group .btn-outline {
+  background: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+.cta-group .btn-outline:hover {
+  transform: translateY(-3px);
+  border: 2px solid var(--white);
+}  
+.hero-image {
+  max-width: 45%;
+  height: auto;
+}
+
+/* About Us Section */
+.about {
+  background: var(--primary);
+  color: var(--white);
+  padding: 4rem 5%;
+}
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.about p,
+.about .features li {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+.about .btn-secondary {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: var(--white);
+  color: var(--primary);
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.about .btn-secondary:hover {
+  transform: translateY(-3px);
+  transition: transform 0.2s;
+}
+/* Our Mission Section */
+.mission {
+  background: var(--white);
+  color: #000;
+  padding: 4rem 5%;
+}
+.mission h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+.mission p {
+  font-size: 1.1rem;
+}
+
+/* FAQ Page Styles */
+.faq-page .faq-intro {
+  padding: 6rem 5% 2rem;
+  text-align: center;
+}
+.faq-page .faq-intro h1 {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+.faq-page .faq-intro p {
+  font-size: 1.1rem;
+}
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 5% 4rem;
+}
+.faq-item {
+  margin-bottom: 2rem;
+}
+.faq-item h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.faq-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Tool Page Styles */
+.tool-hero {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 1rem;
+  padding-top: 6rem;  /* nav (~4rem) + original padding (4rem) = 6rem total */
+  width: 100%;
+  margin: 0;
+  background-size: cover;
+}
+.tool-hero h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.tool-hero p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  max-width: 800px;
+  margin: 1rem auto 0;
+}
+
+.tool-content {
+  padding: 4rem 5%;
+  background: var(--white);
+  color: #000;
+}
+.form-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+/* style.css */
+
+.form-card,
+.result-card {
+  /* x-offset | y-offset | blur radius | spread radius | color */
+  box-shadow: 0 4px 12px rgba(111, 63, 256, 0.4);
+}
+
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* make sure both cards transition smoothly */
+.form-card,
+.result-card {
+  transition: box-shadow 0.4s ease;
+}
+
+/* when you hover over the entire combiner (which wraps both form and result) */
+.form-card:hover {
+  box-shadow: 0 0 8px 6px var(--glow-purple);
+}
+
+/* also, when the result box itself appears, give it the same base glow */
+.result-card {
+  /* you can even give it a faint default glow if you like */
+  box-shadow: 0 0 8px 6px var(--glow-purple);
+}
+
+.form-card:hover {
+  box-shadow: 0 0 8px 6px var(--glow-purple);
+}
+
+/* —— Button Styles —— */
+.button-group button {
+  min-width: 120px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+.btn-outline:hover {
+  transform: translateY(-2px);
+}
+
+/* —— Result Card Styling —— */
+.result-card {
+  margin-top: 2rem;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.result-card h2 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+.result-card p {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+.result-card span {
+  font-weight: 500;
+}
+
+/* —— FAQ Accordion Styles —— */
+
+/* Container spacing */
+.tool-content .faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Each item border & shadow */
+.faq-item {
+  background: var(--white);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.faq-item:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Question bar */
+.faq-item .question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+}
+.faq-item .question .arrow {
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+/* Answer panel */
+.faq-item .answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  color: #333;
+}
+
+/* When open... */
+.faq-item.open .answer {
+  max-height: 200px; /* enough to show most answers */
+  padding: 1rem 1.5rem;
+}
+.faq-item.open .question .arrow {
+  transform: rotate(180deg);
+}
+
+/* Question background change on open (optional) */
+.faq-item.open .question {
+  background: rgba(111, 63, 255, 0.05);
+}
+
+/* —— Custom Dropdown Styles —— */
+.dropdown {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.dropdown-header:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.dropdown-list {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: max-height 0.3s ease;
+  z-index: 10;
+}
+.dropdown.open .dropdown-list {
+  max-height: 240px; /* adjust if you have many items */
+}
+.dropdown-list li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dropdown-list li:hover {
+  background: rgba(111,63,255,0.05);
+}
+.dropdown .arrow {
+  transition: transform 0.3s;
+}
+.dropdown.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* —— Fix dropdown borders & stacking —— */
+
+/* 1. Header gets only top & side borders, no bottom */
+.dropdown-header {
+  border-bottom: none;  
+  border-radius: 0.5rem 0.5rem 0 0;  
+}
+
+/* 2. When closed, no border on the list at all */
+.dropdown-list {
+  border: none;
+}
+
+/* 3. When open, list gets only bottom & side borders, no top */
+.dropdown.open .dropdown-list {
+  border: 1px solid #ccc;
+  border-top: none;  
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin-top: -1px;        /* butt perfectly under the header */
+  z-index: 20;             /* float above following inputs */
+}
+
+/* 4. Give each dropdown a little extra bottom gap to prevent overlap */
+.dropdown {
+  margin-bottom: 2rem;
+}
+.result-card.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Default display */
+.navbar-desktop {
+  display: flex;
+}
+.navbar-mobile {
+  display: none;
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive: Mobile overrides */
+@media (max-width: 600px) {
+  .navbar-desktop {
+    display: none;
+  }
+
+  .navbar-mobile {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgba(36, 20, 84, 0.4);      /*  translucent dark */
+    backdrop-filter: blur(10px);                       /* apply the glass blur */
+    -webkit-backdrop-filter: blur(10px);               /* for Safari */    
+    backdrop-filter: blur(10px);
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1001;
+    position: relative;
+  }
+
+  .navbar-mobile .nav-links {
+   position: fixed;
+   top: 4rem; /* sit just below navbar */
+   left: 0;
+    width: 100%;
+   height: calc(100vh - 4rem);
+   background-color: rgba(36, 20, 84, 0.4);
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+    align-items: center;
+   opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+}
+
+  .navbar-mobile .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+  .navbar-mobile .nav-links li {
+    list-style: none;
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .navbar-mobile .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+  }
+}
